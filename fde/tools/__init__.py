@@ -4,12 +4,9 @@ __versioninfo__ = (2, 8, 0)
 __version__     = '.'.join( map( str, __versioninfo__ ) )
 __all__         = ['debug']
 
-import logging
-
-logging.basicConfig( level = logging.ERROR )
-
 
 from ._helper           import NullHandle, Wallet, NullGuard, _arg, auto_raise, _decorate
+from ._logUtil          import define_logger, get_logger
 from ._libLoader        import LibLoader, core_loader, CDLL_t
 from ._convert          import dict2obj
 from ._files            import sys_channel, openFile, makedirs
